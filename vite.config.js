@@ -4,7 +4,7 @@ import path from "path"
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/multiser/",
   server: {
     port: 8080,
   },
