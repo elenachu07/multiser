@@ -8,6 +8,7 @@ const highlights = [
   "Atención personalizada en cada proyecto",
 ];
 
+
 const About = () => {
   return (
     <section id="about" className="py-20 md:py-28 bg-muted/30">
