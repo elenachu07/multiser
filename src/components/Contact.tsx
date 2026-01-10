@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Correo",
-    value: "yonar@multiser.es",
-    href: "mailto:yonar@multiser.es",
+    value: "hola@utiliser.com",
+    href: "mailto:hola@utiliser.com",
   },
   {
     icon: MapPin,
