@@ -18,13 +18,6 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-6 animate-fade-up">
-            <Sparkles className="w-4 h-4 text-gold" />
-            <span className="text-primary-foreground/90 text-sm font-medium">
-              Diseño de Jardines Premiado
-            </span>
-          </div>
 
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight mb-6 animate-fade-up animation-delay-200">
@@ -50,9 +43,6 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
           </Button>
-            <Button variant="heroOutline" size="xl">
-              Ver Nuestro Trabajo
-            </Button>
           </div>
 
           {/* Stats */}

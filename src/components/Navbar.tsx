@@ -38,9 +38,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="default" size="sm">
-              Cotización
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,9 +68,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="default" className="w-full mt-2">
-                Cotización
-              </Button>
             </div>
           </div>
         )}
