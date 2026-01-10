@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Correo",
-    value: "hola@utiliser.com",
-    href: "mailto:hola@utiliser.com",
+    value: "yonar@multiser.es",
+    href: "mailto:yonar@multiser.es",
   },
   {
     icon: MapPin,
@@ -38,34 +38,34 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
   
-    try {
-      const res = await fetch("https://formspree.io/f/mpqwebge", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }),
-      });
+  //   try {
+  //     const res = await fetch("https://formspree.io/f/mpqwebge", {
+  //       method: "POST",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name: formData.name,
+  //         email: formData.email,
+  //         phone: formData.phone,
+  //         message: formData.message,
+  //       }),
+  //     });
   
-      if (res.ok) {
-        toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      } else {
-        toast.error("No se pudo enviar el mensaje. Inténtalo de nuevo.");
-      }
-    } catch (error) {
-      toast.error("Error de conexión. Inténtalo de nuevo.");
-    }
-  };
+  //     if (res.ok) {
+  //       toast.success("¡Gracias por tu mensaje! Te contactaremos pronto.");
+  //       setFormData({ name: "", email: "", phone: "", message: "" });
+  //     } else {
+  //       toast.error("No se pudo enviar el mensaje. Inténtalo de nuevo.");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error de conexión. Inténtalo de nuevo.");
+  //   }
+  // };
   
 
   const handleChange = (
