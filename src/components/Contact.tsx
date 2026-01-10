@@ -7,25 +7,25 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Teléfono",
-    value: " 611 341 597 - 722 643 200",
+    value: "611 34 15 97 - 722 64 32 00",
     href: "tel:+15551234567",
   },
   {
     icon: Mail,
     label: "Correo",
-    value: "hola@utiliser.com",
-    href: "mailto:hola@utiliser.com",
+    value: "info@multiser.es",
+    href: "mailto:info@multiser.com",
   },
   {
     icon: MapPin,
     label: "Ubicación",
-    value: "Porto lagos 11 bajo a Alcorcón",
+    value: "Porto Lagos 11 bajo A Alcorcón",
     href: "#",
   },
   {
     icon: Clock,
     label: "Horario",
-    value: "Lun-Sáb: 8AM - 6PM",
+    value: "Lun-Sáb: 8AM - 8PM",
     href: "#",
   },
 ];
@@ -42,7 +42,7 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const res = await fetch("https://formspree.io/f/mpqwebge", {
+      const res = await fetch("https://formspree.io/f/xpqqaozj", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -164,7 +164,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
-                    placeholder="(555) 123-4567"
+                    placeholder="+34 123 45 67 89"
                   />
                 </div>
               </div>
