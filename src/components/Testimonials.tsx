@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "María García",
     role: "Propietaria",
-    content: "Multiser transformó nuestro patio trasero en un paraíso absoluto. Sarah entendió exactamente lo que queríamos y superó nuestras expectativas. La atención al detalle es extraordinaria.",
+    content: "Multiser transformó nuestro patio trasero en un paraíso absoluto. Yonar entendió exactamente lo que queríamos y superó nuestras expectativas. La atención al detalle es extraordinaria.",
     rating: 5,
   },
   {

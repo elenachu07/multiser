@@ -51,8 +51,8 @@ const About = () => {
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               En Mutiliser, creemos que cada espacio exterior tiene el potencial de convertirse 
-              en algo extraordinario. Fundada por Sarah Mitchell, una horticultora certificada 
-              con un profundo amor por la naturaleza, hemos estado transformando jardines en toda la región 
+              en algo extraordinario. Fundada por Yonar, una horticultora certificada 
+              con un profundo amor por la naturaleza, hemos estado transformando jardines en todo Madrid 
               durante más de 15 años.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">

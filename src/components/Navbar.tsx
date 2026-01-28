@@ -1,4 +1,4 @@
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X, Leaf, Phone } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +12,9 @@ const Navbar = () => {
     { href: "#testimonials", label: "Testimonios" },
     { href: "#contact", label: "Contacto" },
   ];
+
+  const phoneNumber = "+34611341597"; // change if needed
+  const telLink = `tel:${phoneNumber}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -27,7 +30,7 @@ const Navbar = () => {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation + Call button */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -38,6 +41,14 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+
+            {/* ✅ CALL BUTTON (Desktop) */}
+            <Button asChild className="ml-2">
+              <a href={telLink} aria-label="Llamar ahora">
+                <Phone className="w-4 h-4 mr-2" />
+                Llamar
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,6 +79,18 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
+
+              {/* ✅ CALL BUTTON (Mobile dropdown) */}
+              <Button asChild className="w-full mt-2">
+                <a
+                  href={telLink}
+                  aria-label="Llamar ahora"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Llamar ahora
+                </a>
+              </Button>
             </div>
           </div>
         )}

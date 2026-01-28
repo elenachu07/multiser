@@ -22,12 +22,12 @@ const Hero = () => {
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight mb-6 animate-fade-up animation-delay-200">
             Transforma Tu Espacio Exterior en un{" "}
-            <span className="text-gold">Paraíso Natural</span>
+            <span className="text-gold">Paraíso Natural en Madrid</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed animate-fade-up animation-delay-400">
-            Servicios expertos de paisajismo y cuidado de jardines que traen la belleza 
+            Servicios expertos de paisajismo y cuidado de jardines en Madrid que traen la belleza 
             de la naturaleza a tu puerta. Más de 15 años creando espacios exteriores impresionantes.
           </p>
 
