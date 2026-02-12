@@ -10,7 +10,7 @@ import { usePageViews } from "./usePageViews";
 const queryClient = new QueryClient();
 
 function AppRoutes() {
-  usePageViews("G-1EWPEZ8ZML");
+  usePageViews("G-97NEYGG47S");
 
   return (
     <Routes>
