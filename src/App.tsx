@@ -10,6 +10,7 @@ import { usePageViews } from "./usePageViews";
 const queryClient = new QueryClient();
 
 function AppRoutes() {
+  // pass your GA4 measurement id here
   usePageViews("G-97NEYGG47S");
 
   return (
@@ -34,4 +35,3 @@ const App = () => (
 );
 
 export default App;
-
