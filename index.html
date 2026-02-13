@@ -4,16 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multiser | Servicios Profesionales de Jardinería y Paisajismo</title>
-    <meta name="description" content="Servicios profesionales de jardinería en Madrid. Mantenimiento de jardines, poda, césped y riego. Presupuesto gratuito y atención rápida.” />
-    
+    <meta name="description" content="Servicios profesionales de jardinería en Madrid. Mantenimiento de jardines, poda, césped y riego. Presupuesto gratuito y atención rápida.”" />
+
+    <!-- GA4: make sure this ID is correct for your property -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-97NEYGG47S"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-97NEYGG47S');
+      // ensure globals exist and gtag is attached to window immediately
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        // create a safe window.gtag function that pushes to dataLayer if the real gtag isn't ready
+        if (!window.gtag) {
+          window.gtag = function () {
+            window.dataLayer.push(arguments);
+          };
+        }
+
+        // Initialize gtag (we set send_page_view:false so SPA will control page views)
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-97NEYGG47S', { send_page_view: false });
+      })();
     </script>
-    
 
     <meta name="author" content="Multiser" />
     <meta name="keywords" content="jardinería, paisajismo, diseño de jardines, cuidado del césped, horticultura, plantación, mantenimiento" />
@@ -26,7 +36,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@multiser" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <script type="module" crossorigin src="/assets/index-BVn9HFCZ.js"></script>
+    <script type="module" crossorigin src="/assets/index-BNo4HVmz.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-C4SE3LMK.css">
   </head>
 
