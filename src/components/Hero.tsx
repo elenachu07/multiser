@@ -1,9 +1,34 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-garden.jpg";
-import { trackEvent } from "@/lib/analytics";
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 const Hero = () => {
+  const whatsappLink = "https://wa.me/611341597";
+
+  const handleWhatsAppClick = (
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    e.preventDefault();
+
+    if (window.gtag) {
+      window.gtag("event", "click_whatsapp_consulta_gratuita", {
+        location: "hero_section",
+        event_callback: () => {
+          window.open(whatsappLink, "_blank");
+        },
+        event_timeout: 2000,
+      });
+    } else {
+      window.open(whatsappLink, "_blank");
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
       {/* Background Image */}
@@ -32,18 +57,19 @@ const Hero = () => {
             de la naturaleza a tu puerta. Más de 15 años creando espacios exteriores impresionantes.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
-          <Button asChild variant="accent" size="xl">
-            <a
-              href="https://wa.me/611341597"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Consulta Gratuita
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </Button>
+            <Button asChild variant="accent" size="xl">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
+              >
+                Consulta Gratuita
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
           </div>
 
           {/* Stats */}
@@ -63,10 +89,11 @@ const Hero = () => {
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
-      {/* Decorative Elements */}
+      {/* Decorative Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
