@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-garden.jpg";
+import { trackEvent } from "@/lib/analytics";
 
 const Hero = () => {
   return (

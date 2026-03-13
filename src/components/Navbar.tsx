@@ -1,6 +1,7 @@
 import { Menu, X, Leaf, Phone } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +14,14 @@ const Navbar = () => {
     { href: "#contact", label: "Contacto" },
   ];
 
-  const phoneNumber = "+34611341597"; // change if needed
+  const phoneNumber = "+34611341597";
   const telLink = `tel:${phoneNumber}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
+          
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -44,7 +46,16 @@ const Navbar = () => {
 
             {/* ✅ CALL BUTTON (Desktop) */}
             <Button asChild className="ml-2">
-              <a href={telLink} aria-label="Llamar ahora">
+              <a
+                href={telLink}
+                aria-label="Llamar ahora"
+                onClick={() =>
+                  trackEvent("click_call", {
+                    location: "navbar_desktop",
+                    phone_number: phoneNumber,
+                  })
+                }
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 Llamar
               </a>
@@ -80,12 +91,18 @@ const Navbar = () => {
                 </a>
               ))}
 
-              {/* ✅ CALL BUTTON (Mobile dropdown) */}
+              {/* ✅ CALL BUTTON (Mobile) */}
               <Button asChild className="w-full mt-2">
                 <a
                   href={telLink}
                   aria-label="Llamar ahora"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    trackEvent("click_call", {
+                      location: "navbar_mobile",
+                      phone_number: phoneNumber,
+                    });
+                    setIsOpen(false);
+                  }}
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Llamar ahora
