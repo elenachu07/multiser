@@ -2,8 +2,8 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "María García",
-    role: "Propietaria",
+    name: "Jhony",
+    role: "Propietario",
     content: "Multiser transformó nuestro patio trasero en un paraíso absoluto. Yonar entendió exactamente lo que queríamos y superó nuestras expectativas. La atención al detalle es extraordinaria.",
     rating: 5,
   },
@@ -14,8 +14,8 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Elena Martínez",
-    role: "Dueña de Restaurante",
+    name: "Chrisitina Martínez",
+    role: "Propietaria",
     content: "El área de comedor exterior que diseñaron se ha convertido en nuestro espacio más solicitado. Los clientes constantemente elogian el hermoso ambiente del jardín. La mejor inversión que hemos hecho.",
     rating: 5,
   },
