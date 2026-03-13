@@ -1,7 +1,12 @@
 import { Menu, X, Leaf, Phone } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +21,26 @@ const Navbar = () => {
 
   const phoneNumber = "+34611341597";
   const telLink = `tel:${phoneNumber}`;
+
+  const handleCallClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    location: string
+  ) => {
+    e.preventDefault();
+
+    if (window.gtag) {
+      window.gtag("event", "click_call", {
+        location,
+        phone_number: phoneNumber,
+        event_callback: () => {
+          window.location.href = telLink;
+        },
+        event_timeout: 2000,
+      });
+    } else {
+      window.location.href = telLink;
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -49,12 +74,7 @@ const Navbar = () => {
               <a
                 href={telLink}
                 aria-label="Llamar ahora"
-                onClick={() =>
-                  trackEvent("click_call", {
-                    location: "navbar_desktop",
-                    phone_number: phoneNumber,
-                  })
-                }
+                onClick={(e) => handleCallClick(e, "navbar_desktop")}
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Llamar
@@ -96,11 +116,8 @@ const Navbar = () => {
                 <a
                   href={telLink}
                   aria-label="Llamar ahora"
-                  onClick={() => {
-                    trackEvent("click_call", {
-                      location: "navbar_mobile",
-                      phone_number: phoneNumber,
-                    });
+                  onClick={(e) => {
+                    handleCallClick(e, "navbar_mobile");
                     setIsOpen(false);
                   }}
                 >
